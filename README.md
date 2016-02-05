@@ -15,6 +15,9 @@ npm i -S hubot-toggl-payment
 add `["hubot-toggl-payment"]` to `external-scripts.json`.
 
 ## Examples
-`hubot toggl login <token>` -> `Login success as <fullname>`
 
-`hubot toggl payment <amount> <price>` -> `Processing time entries... Ready. Diference is a few seconds`
+The *password* is required to store token encrypted. Run this commands in a private message.
+
+`hubot toggl login <token> <password>` -> `Login success as <fullname>`
+
+`hubot toggl payment <amount> <price> <password>` -> `Processing time entries... Ready. Diference is a few seconds`
