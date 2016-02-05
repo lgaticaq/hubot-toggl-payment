@@ -1,0 +1,30 @@
+{
+  "name": "hubot-toggl-payment",
+  "version": "1.0.0",
+  "description": "A Hubot script to close time entries for new payment",
+  "main": "src",
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lgaticaq/hubot-toggl-payment.git"
+  },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "toggle"
+  ],
+  "author": "Leonardo Gatica <lgatica@protonmail.com> (https://about.me/lgatica)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lgaticaq/hubot-toggl-payment/issues"
+  },
+  "homepage": "https://github.com/lgaticaq/hubot-toggl-payment#readme",
+  "dependencies": {
+    "bluebird": "^3.2.1",
+    "moment": "^2.11.2",
+    "request-promise": "^2.0.0",
+    "toggl-api": "0.0.4"
+  }
+}
