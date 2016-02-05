@@ -16,4 +16,5 @@ add `["hubot-toggl-payment"]` to `external-scripts.json`.
 
 ## Examples
 `hubot toggl login <token>` -> `Login success as <fullname>`
+
 `hubot toggl payment <amount> <price>` -> `Processing time entries... Ready. Diference is a few seconds`
