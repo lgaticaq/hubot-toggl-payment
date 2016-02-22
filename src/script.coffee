@@ -75,8 +75,8 @@ module.exports = (robot) ->
       robot.emit "error", err
 
   robot.respond /toggl payment (\d+) (\d*(\.\d+)) ([\w\W\d\s]+)/, (res) ->
-    amount = res.match[2]
-    price = res.match[3]
+    amount = res.match[1]
+    price = res.match[2]
     secret = res.match[4]
     unless res.message.room is res.message.user.name
       res.reply "only use this command in a private message"
