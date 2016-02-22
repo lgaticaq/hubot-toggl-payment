@@ -1,2 +1,2 @@
 module.exports = (robot) ->
-  robot.loadFile __dirname, "script.js"
+  robot.loadFile __dirname, "script.coffee"
