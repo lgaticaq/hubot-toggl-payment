@@ -41,14 +41,14 @@ process = (timeEntries, amount, price) ->
       limit = (amount / (uf * price)) * 3600
       teIds = []
       duration = 0
-      difference = ""
+      message = "Time entries to payment:\n"
       for i in timeEntries
         if ((duration + i.duration) < limit) and not i.tags?
           duration += i.duration
           teIds.push i.id
-      if limit > duration
-        difference = ". Diference is #{parseInt(limit - duration, 10)} seconds"
-      resolve {difference: difference, teIds: teIds}
+          message += "#{i.description} #{moment.utc(i.duration * 1000).format("HH:mm:ss")}\n"
+      message += "Finish. Total time is: #{moment.utc(duration * 1000).format("HH:mm:ss")}"
+      resolve {message: message, teIds: teIds}
     .catch reject
 
 module.exports = (robot) ->
@@ -101,7 +101,7 @@ module.exports = (robot) ->
     toggl.getTimeEntriesAsync(start, end).then (timeEntries) ->
       process timeEntries, amount, price
     .then (data) ->
-      message = "Ready#{data.difference}"
+      message = data.message
       toggl.updateTimeEntriesTagsAsync data.teIds, tags, action
     .then () ->
       res.send message
