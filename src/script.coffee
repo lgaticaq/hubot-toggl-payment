@@ -10,7 +10,8 @@
 #
 # Commands:
 #   hubot toggl login <token> <password> - Login to Toggl
-#   hubot toggl payment <amount> <price> <password> - Close time entries for the amount and price
+#   hubot toggl payment <amount> <price> <password> - Close time entries for
+#     the amount and price
 #
 # Author:
 #   lgaticaq
@@ -31,7 +32,7 @@ getUf = () ->
     url: "http://indicadoresdeldia.cl/webservice/indicadores.json"
     json: true
     transform: (body) ->
-      parseFloat body.indicador.uf.replace("$", "").replace(".", "").replace(",", ".")
+      parseFloat body.indicador.uf.replace(/[$.]/g, "").replace(",", ".")
   rp options
 
 process = (timeEntries, amount, price) ->
@@ -40,11 +41,13 @@ process = (timeEntries, amount, price) ->
       limit = (amount / (uf * price)) * 3600
       teIds = []
       duration = 0
+      difference = ""
       for i in timeEntries
-        if ((duration + i.duration) < limit) and i.tags?
+        if ((duration + i.duration) < limit) and not i.tags?
           duration += i.duration
           teIds.push i.id
-      difference = if limit > duration then ". Diference is #{moment.duration(limit - duration, 'seconds').humanize()}" else ""
+      if limit > duration
+        difference = ". Diference is #{parseInt(limit - duration, 10)} seconds"
       resolve {difference: difference, teIds: teIds}
     .catch reject
 
@@ -63,7 +66,8 @@ module.exports = (robot) ->
     encryptor = simpleEncryptor secret
     toggl.getUserDataAsync({}).then (userData) ->
       unless robot.brain.data.users[res.message.user.id]?
-        robot.brain.data.users[res.message.user.id] = {name: res.message.user.name}
+        robot.brain.data.users[res.message.user.id] =
+          name: res.message.user.name
         robot.brain.save()
       user = robot.brain.userForName res.message.user.name
       user.toggl =
@@ -88,13 +92,13 @@ module.exports = (robot) ->
     res.send "Processing time entries..."
     tags = ["Pagado"]
     action = "add"
-    end = moment()
-    start = end.subtract 1, "years"
+    end = moment().toISOString()
+    start = moment().subtract(1, "years").toISOString()
     user = robot.brain.userForName res.message.user.name
     encryptor = simpleEncryptor secret
     message = ""
     toggl = getClient encryptor.decrypt user.toggl.api_token
-    toggl.getTimeEntriesAsync(start.toISOString(), end.toISOString()).then (timeEntries) ->
+    toggl.getTimeEntriesAsync(start, end).then (timeEntries) ->
       process timeEntries, amount, price
     .then (data) ->
       message = "Ready#{data.difference}"
