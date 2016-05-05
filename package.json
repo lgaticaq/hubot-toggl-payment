@@ -24,7 +24,7 @@
   "dependencies": {
     "bluebird": "^3.2.1",
     "moment": "^2.11.2",
-    "request-promise": "^2.0.0",
+    "request-promise": "^3.0.0",
     "simple-encryptor": "^1.0.3",
     "toggl-api": "0.0.4"
   }
