@@ -26,6 +26,6 @@
     "moment": "^2.11.2",
     "request-promise": "^3.0.0",
     "simple-encryptor": "^1.0.3",
-    "toggl-api": "0.0.4"
+    "toggl-api": "1.0.0"
   }
 }
