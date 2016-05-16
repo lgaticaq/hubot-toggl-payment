@@ -35,6 +35,9 @@ getUf = () ->
       parseFloat body.indicador.uf.replace(/[$.]/g, "").replace(",", ".")
   rp options
 
+parseDuration = (duration) ->
+  return moment.utc(duration * 1000).format("HH:mm:ss")
+
 process = (timeEntries, amount, price) ->
   new Promise (resolve, reject) ->
     getUf().then (uf) ->
@@ -46,8 +49,8 @@ process = (timeEntries, amount, price) ->
         if ((duration + i.duration) < limit) and not i.tags?
           duration += i.duration
           teIds.push i.id
-          message += "#{i.description} #{moment.utc(i.duration * 1000).format("HH:mm:ss")}\n"
-      message += "Finish. Total time is: #{moment.utc(duration * 1000).format("HH:mm:ss")}"
+          message += "#{i.description} #{parseDuration(i.duration)}\n"
+      message += "Finish. Total time is: #{parseDuration(duration)}"
       resolve {message: message, teIds: teIds}
     .catch reject
 
