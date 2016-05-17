@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-toggl-payment#readme",
   "dependencies": {
-    "bluebird": "^3.3.5",
+    "bluebird": "^3.4.0",
     "moment": "^2.13.0",
     "request-promise": "^3.0.0",
     "simple-encryptor": "^1.1.0",
