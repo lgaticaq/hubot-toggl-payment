@@ -15,6 +15,8 @@
 npm i -S hubot-toggl-payment
 ```
 
+Set environment variable *TOGGL_CHANNEL* to channel notifications.
+
 add `["hubot-toggl-payment"]` to `external-scripts.json`.
 
 ## Examples

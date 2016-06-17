@@ -8,6 +8,9 @@
 #   "simple-encryptor": "^1.0.3",
 #   "toggl-api": "0.0.4"
 #
+# Configuration:
+#   TOGGL_CHANNEL
+#
 # Commands:
 #   hubot toggl login <token> <password> - Login to Toggl
 #   hubot toggl payment <amount> <price> <password> - Close time entries for
@@ -85,6 +88,7 @@ module.exports = (robot) ->
     amount = res.match[1]
     price = res.match[2]
     secret = res.match[4]
+    channel = process.env.TOGGL_CHANNEL or "#random"
     unless res.message.room is res.message.user.name
       res.reply "only use this command in a private message"
       robot.send {room: res.message.user.name}, "Send me toggl command"
@@ -109,7 +113,7 @@ module.exports = (robot) ->
     .then () ->
       res.send message
       welcome = "#{msg.message.user.name} close tasks successfull"
-      robot.messageRoom("#random", "#{welcome}\n#{message}")
+      robot.messageRoom(channel, "#{welcome}\n#{message}")
     .catch (err) ->
       res.reply "an error occurred in toggl"
       robot.emit "error", err
