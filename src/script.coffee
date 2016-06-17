@@ -108,6 +108,8 @@ module.exports = (robot) ->
       toggl.updateTimeEntriesTagsAsync data.teIds, tags, action
     .then () ->
       res.send message
+      welcome = "#{msg.message.user.name} close tasks successfull"
+      robot.messageRoom("#random", "#{welcome}\n#{message}")
     .catch (err) ->
       res.reply "an error occurred in toggl"
       robot.emit "error", err
