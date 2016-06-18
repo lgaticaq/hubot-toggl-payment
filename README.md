@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/hubot-toggl-payment.svg?style=flat-square)](https://www.npmjs.com/package/hubot-toggl-payment)
 [![npm downloads](https://img.shields.io/npm/dm/hubot-toggl-payment.svg?style=flat-square)](https://www.npmjs.com/package/hubot-toggl-payment)
-[![dependency Status](https://img.shields.io/david/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://david-dm.org/lgaticaq/hubot-toggl-payment#info=dependencies)
+[![Build Status](https://img.shields.io/travis/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://travis-ci.org/lgaticaq/hubot-toggl-payment)
 [![Coverage Status](https://img.shields.io/coveralls/lgaticaq/hubot-toggl-payment/master.svg?style=flat-square)](https://coveralls.io/github/lgaticaq/hubot-toggl-payment?branch=master)
 [![Code Climate](https://img.shields.io/codeclimate/github/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://codeclimate.com/github/lgaticaq/hubot-toggl-payment)
 [![dependency Status](https://img.shields.io/david/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://david-dm.org/lgaticaq/hubot-toggl-payment#info=dependencies)
