@@ -41,7 +41,7 @@ getUf = () ->
 parseDuration = (duration) ->
   return moment.utc(duration * 1000).format("HH:mm:ss")
 
-process = (timeEntries, amount, price) ->
+processTimeEntries = (timeEntries, amount, price) ->
   new Promise (resolve, reject) ->
     getUf().then (uf) ->
       limit = (amount / (uf * price)) * 3600
@@ -106,13 +106,13 @@ module.exports = (robot) ->
     message = ""
     toggl = getClient encryptor.decrypt user.toggl.api_token
     toggl.getTimeEntriesAsync(start, end).then (timeEntries) ->
-      process timeEntries, amount, price
+      processTimeEntries timeEntries, amount, price
     .then (data) ->
       message = data.message
       toggl.updateTimeEntriesTagsAsync data.teIds, tags, action
     .then () ->
       res.send message
-      welcome = "#{msg.message.user.name} close tasks successfull"
+      welcome = "#{res.message.user.name} close tasks successfull"
       robot.messageRoom(channel, "#{welcome}\n#{message}")
     .catch (err) ->
       res.reply "an error occurred in toggl"
