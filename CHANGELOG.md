@@ -49,11 +49,11 @@
 
 * Fix call script from index.coffee ([1b082f6](https://github.com/lgaticaq/hubot-toggl-payment/commit/1b082f6))
 
-#### 1.1.0 (2016-02-05)
+### 1.1.0 (2016-02-05)
 
 * Add store token encrypted ([6e4071d](https://github.com/lgaticaq/hubot-toggl-payment/commit/6e4071d))
 * Fix example ([37a4a29](https://github.com/lgaticaq/hubot-toggl-payment/commit/37a4a29))
 
-#### 1.0.0 (2016-02-05)
+## 1.0.0 (2016-02-05)
 
 * first commit ([b985f6b](https://github.com/lgaticaq/hubot-toggl-payment/commit/b985f6b))
