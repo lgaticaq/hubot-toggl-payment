@@ -1,3 +1,12 @@
+#### 1.1.7 (2016-8-22)
+
+##### Chores
+
+* **package:**
+  * Update dependencies ([6435707b](https://github.com/lgaticaq/hubot-toggl-payment/commit/6435707b8bb937aaac4e9980caeb7fc401ddc6ac))
+  * update mocha to version 3.0.0 ([9ef329cc](https://github.com/lgaticaq/hubot-toggl-payment/commit/9ef329cca578a9e53d4faae39d143f589ab35bfc))
+  * update request-promise to version 4.0.0 ([d2188991](https://github.com/lgaticaq/hubot-toggl-payment/commit/d21889912eb605fe2faf642e7e33bffa32627083))
+
 #### 1.1.6 (2016-6-17)
 
 ##### Chores
