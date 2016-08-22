@@ -61,9 +61,9 @@ module.exports = (robot) ->
   robot.respond /toggl login (\w{32}) ([\w\W\d\s]+)/, (res) ->
     token = res.match[1]
     secret = res.match[2]
-    unless res.message.room is res.message.user.name
+    unless res.message.room is res.message.user.room
       res.reply "only use this command in a private message"
-      robot.send {room: res.message.user.name}, "Send me toggl command"
+      robot.send {room: res.message.user.room}, "Send me toggl command"
       return
     if secret.length < 16
       res.reply "the secret minimum length must be 16 characters"
@@ -89,9 +89,9 @@ module.exports = (robot) ->
     price = res.match[2]
     secret = res.match[4]
     channel = process.env.TOGGL_CHANNEL or "#random"
-    unless res.message.room is res.message.user.name
+    unless res.message.room is res.message.user.room
       res.reply "only use this command in a private message"
-      robot.send {room: res.message.user.name}, "Send me toggl command"
+      robot.send {room: res.message.user.room}, "Send me toggl command"
       return
     if secret.length < 16
       res.reply "the secret minimum length must be 16 characters"
