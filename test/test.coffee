@@ -49,6 +49,11 @@ describe "hubot-toggl-payment", ->
 
   beforeEach ->
     room = helper.createRoom({name: "user"})
+    room.robot.adapter.client =
+      rtm:
+        dataStore:
+          getDMByName: (name) ->
+            return {id: name, name: name}
     nock.disableNetConnect()
 
   afterEach ->
