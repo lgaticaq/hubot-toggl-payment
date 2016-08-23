@@ -1,3 +1,9 @@
+#### 1.1.8 (2016-8-23)
+
+##### Bug Fixes
+
+* **private message:** Fix send private message ([30e8a18f](https://github.com/lgaticaq/hubot-toggl-payment/commit/30e8a18fff03a453b51689e96469cff6f4f7c79f))
+
 #### 1.1.7 (2016-8-22)
 
 ##### Chores
