@@ -2,11 +2,11 @@
 #   A Hubot script to close time entries for new payment
 #
 # Dependencies:
-#   "bluebird": "^3.2.1",
-#   "moment": "^2.11.2",
-#   "request-promise": "^2.0.0",
-#   "simple-encryptor": "^1.0.3",
-#   "toggl-api": "0.0.4"
+#   "bluebird": "^3.4.6"
+#   "indicadoresdeldia": "^0.0.3"
+#   "parse-ms": "^1.0.1"
+#   "simple-encryptor": "^1.1.0"
+#   "toggl-api": "^1.0.1"
 #
 # Configuration:
 #   TOGGL_CHANNEL
@@ -19,7 +19,7 @@
 # Author:
 #   lgaticaq
 
-moment = require "moment"
+parseMs = require "parse-ms"
 TogglClient = require "toggl-api"
 Promise = require "bluebird"
 simpleEncryptor = require "simple-encryptor"
@@ -30,8 +30,16 @@ getClient = (token) ->
   Promise.promisifyAll Object.getPrototypeOf toggl
   toggl
 
+pad = (n, width, z="0") ->
+  n = n + ""
+  if n.length >= width
+    return n
+  else
+    return new Array(width - n.length + 1).join(z) + n
+
 parseDuration = (duration) ->
-  return moment.utc(duration * 1000).format("HH:mm:ss")
+  ms = parseMs(duration * 1000)
+  return "#{pad(ms.hours, 2)}:#{pad(ms.minutes, 2)}:#{pad(ms.seconds, 2)}"
 
 processTimeEntries = (timeEntries, amount, price) ->
   new Promise (resolve, reject) ->
@@ -93,8 +101,10 @@ module.exports = (robot) ->
     res.send "Processing time entries..."
     tags = ["Pagado"]
     action = "add"
-    end = moment().toISOString()
-    start = moment().subtract(1, "years").toISOString()
+    today = new Date()
+    end = today.toISOString()
+    today.setFullYear(today.getFullYear() - 1)
+    start = today.toISOString()
     user = robot.brain.userForName res.message.user.name
     encryptor = simpleEncryptor secret
     message = ""
