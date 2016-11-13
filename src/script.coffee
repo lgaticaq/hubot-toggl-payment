@@ -20,31 +20,23 @@
 #   lgaticaq
 
 moment = require "moment"
-rp = require "request-promise"
 TogglClient = require "toggl-api"
 Promise = require "bluebird"
 simpleEncryptor = require "simple-encryptor"
+indicadores = require "indicadoresdeldia"
 
 getClient = (token) ->
   toggl = new TogglClient apiToken: token
   Promise.promisifyAll Object.getPrototypeOf toggl
   toggl
 
-getUf = () ->
-  options =
-    url: "http://indicadoresdeldia.cl/webservice/indicadores.json"
-    json: true
-    transform: (body) ->
-      parseFloat body.indicador.uf.replace(/[$.]/g, "").replace(",", ".")
-  rp options
-
 parseDuration = (duration) ->
   return moment.utc(duration * 1000).format("HH:mm:ss")
 
 processTimeEntries = (timeEntries, amount, price) ->
   new Promise (resolve, reject) ->
-    getUf().then (uf) ->
-      limit = (amount / (uf * price)) * 3600
+    indicadores().then (data) ->
+      limit = (amount / (data.indicator.uf * price)) * 3600
       teIds = []
       duration = 0
       message = "Time entries to payment:\n"

@@ -2,7 +2,6 @@ Helper = require("hubot-test-helper")
 expect = require("chai").expect
 proxyquire = require("proxyquire")
 simpleEncryptor = require("simple-encryptor")
-nock = require("nock")
 
 apiToken = "DK89YJJRktQ2X0B3i1o7N96Z75pWL2MR"
 apiTokenBad = "DK89YJJRktQ2X0B3i1o7N96Z75pWL2MZ"
@@ -55,7 +54,13 @@ class TogglStub
   updateTimeEntriesTagsAsync: () ->
     return new Promise (resolve) ->
       resolve()
-proxyquire("./../src/script.coffee", {"toggl-api": TogglStub})
+indicadoresStub = () ->
+  return new Promise (resolve) ->
+    resolve({indicator: {uf: 26029.52}})
+proxyquire("./../src/script.coffee", {
+  "toggl-api": TogglStub,
+  "indicadoresdeldia": indicadoresStub
+})
 
 helper = new Helper("./../src/index.coffee")
 
@@ -70,11 +75,9 @@ describe "hubot-toggl-payment", ->
           dataStore:
             getDMByName: (name) ->
               return {id: name, name: name}
-      nock.disableNetConnect()
 
     afterEach ->
       room.destroy()
-      nock.cleanAll()
 
     context "login", ->
       beforeEach (done) ->
@@ -101,9 +104,6 @@ describe "hubot-toggl-payment", ->
 
     context "process time entries", ->
       beforeEach (done) ->
-        nock("http://indicadoresdeldia.cl")
-        .get("/webservice/indicadores.json")
-        .reply 200, {indicador: {uf: "$26.029,52"}}
         room.robot.brain.data.users.user =
           toggl: {api_token: apiTokenEnc}
           room: "user"
@@ -158,9 +158,6 @@ describe "hubot-toggl-payment", ->
 
     context "error client", ->
       beforeEach (done) ->
-        nock("http://indicadoresdeldia.cl")
-        .get("/webservice/indicadores.json")
-        .reply 200, {indicador: {uf: "$26.029,52"}}
         room.robot.brain.data.users.user =
           toggl: {api_token: apiTokenEncBad}
           room: "user"
@@ -183,11 +180,9 @@ describe "hubot-toggl-payment", ->
           dataStore:
             getDMByName: (name) ->
               return {id: name, name: name}
-      nock.disableNetConnect()
 
     afterEach ->
       room.destroy()
-      nock.cleanAll()
 
     context "invalid room", ->
       beforeEach (done) ->
@@ -203,9 +198,6 @@ describe "hubot-toggl-payment", ->
 
     context "process time entries", ->
       beforeEach (done) ->
-        nock("http://indicadoresdeldia.cl")
-        .get("/webservice/indicadores.json")
-        .reply 200, {indicador: {uf: "$26.029,52"}}
         room.robot.brain.data.users.user =
           toggl: {api_token: apiTokenEnc}
           room: "user"
