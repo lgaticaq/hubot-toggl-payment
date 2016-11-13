@@ -1,3 +1,11 @@
+#### 1.1.10 (2016-11-13)
+
+##### Chores
+
+* **package:**
+  * Replace moment with parse-ms ([6c56273d](https://github.com/lgaticaq/hubot-toggl-payment/commit/6c56273d9a2f6f2c9fc99d3698e6e6ad5e8a00a2))
+  * Add indicadoresdeldia to get uf ([74985884](https://github.com/lgaticaq/hubot-toggl-payment/commit/74985884224b876d09942a46a9ee5b1cc15b3145))
+
 #### 1.1.9 (2016-11-13)
 
 ##### Chores
