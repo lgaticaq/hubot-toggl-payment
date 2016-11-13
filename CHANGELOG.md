@@ -1,3 +1,17 @@
+#### 1.1.9 (2016-11-13)
+
+##### Chores
+
+* **tests:** Add more tests ([c1480cd8](https://github.com/lgaticaq/hubot-toggl-payment/commit/c1480cd849badce4e0abc0c6a1c096d88b7ead68))
+* **package:**
+  * Add yarn.lock ([42bbac96](https://github.com/lgaticaq/hubot-toggl-payment/commit/42bbac96525754c1576fdf5d98efa83d254d07a4))
+  * Update dependencies and add request ([acd5b597](https://github.com/lgaticaq/hubot-toggl-payment/commit/acd5b597e705d2b179a0f1c7c1773c48389ebedb))
+  * update nock to version 9.0.2 ([ee7f1ed8](https://github.com/lgaticaq/hubot-toggl-payment/commit/ee7f1ed84429d12249a63cefdaaf96748b795c6b))
+  * update nock to version 9.0.0 ([7490e428](https://github.com/lgaticaq/hubot-toggl-payment/commit/7490e428046fa1e191ac3fbd7be8ed6dd35c2d7f))
+  * update codeclimate-test-reporter to version 0.4.0 ([d175cfdc](https://github.com/lgaticaq/hubot-toggl-payment/commit/d175cfdcb6ef02d2ddbf5778fee5cccd68a6b87c))
+* **travis:** Remove node v5 and add node v7 ([358260d8](https://github.com/lgaticaq/hubot-toggl-payment/commit/358260d826b01d4d5656c6cbb65702779a3afefa))
+* **ignores:** Update npmignore ([3f2a7715](https://github.com/lgaticaq/hubot-toggl-payment/commit/3f2a77159d3a35fdd892606d5e5f0a76a1f1bf1c))
+
 #### 1.1.8 (2016-8-23)
 
 ##### Bug Fixes
