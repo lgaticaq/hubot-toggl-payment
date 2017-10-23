@@ -1,3 +1,33 @@
+#### 1.1.11 (2017-10-23)
+
+##### Chores
+
+* **package:**
+  * update dependencies ([8a5ae478](https://github.com/lgaticaq/hubot-toggl-payment/commit/8a5ae478442d486af079ebec4b4d94cf53bf8f79))
+  * update mocha to version 3.5.3 ([0472c735](https://github.com/lgaticaq/hubot-toggl-payment/commit/0472c735deaa7fe398bf094f73621f4c1b32dc41))
+  * update chai to version 4.0.0 ([82887902](https://github.com/lgaticaq/hubot-toggl-payment/commit/8288790290bec7c00cc1aced944e3656c37dc010))
+  * update coffee-coverage to version 2.0.0 ([f486c79a](https://github.com/lgaticaq/hubot-toggl-payment/commit/f486c79a4459ff5626f51d88ee0115d49282c342))
+* **deps:**
+  * update dependency hubot-test-helper to v1.8.1 ([3aedad7c](https://github.com/lgaticaq/hubot-toggl-payment/commit/3aedad7c3aa0d174d4ad7186663a49b188b4a7c2))
+  * update dependency hubot-test-helper to v1.8.0 ([9a5736eb](https://github.com/lgaticaq/hubot-toggl-payment/commit/9a5736eb987b0dc64e979ea0006924af6b2e5e88))
+  * update dependency mocha to v4.0.1 ([980c74eb](https://github.com/lgaticaq/hubot-toggl-payment/commit/980c74eb09305d12b3b740f8fe1c591731d4e5b1))
+  * update dependency coffeelint to v2.0.6 ([89725ec9](https://github.com/lgaticaq/hubot-toggl-payment/commit/89725ec96354a17cb4d1b7362ff4334a6753a4ee))
+  * update dependency coffeelint to v2.0.5 ([6e22d178](https://github.com/lgaticaq/hubot-toggl-payment/commit/6e22d17872c6b4122039c5b187008caecaced78b))
+  * update dependency coffeelint to v2.0.3 ([2dc5915f](https://github.com/lgaticaq/hubot-toggl-payment/commit/2dc5915f54879a5770e8e70fe83859ba730b62fa))
+  * update dependency mocha to v4.0.0 ([d18ea3f7](https://github.com/lgaticaq/hubot-toggl-payment/commit/d18ea3f7ff727b3caebbdfd66786504a39ed44fc))
+  * update dependency coveralls to v3.0.0 ([a9ebb1f1](https://github.com/lgaticaq/hubot-toggl-payment/commit/a9ebb1f151bc6522ea0cf75275c763ec3c3bdcfe))
+  * update dependency generate-changelog to v1.5.0 ([9a3988c0](https://github.com/lgaticaq/hubot-toggl-payment/commit/9a3988c0471a084dd3631f5c8af60aa7802685dd))
+  * update dependency mocha to v3.5.3 ([5c42238e](https://github.com/lgaticaq/hubot-toggl-payment/commit/5c42238e6f7d2dd5312d56c24eda99a5a6e77e8b))
+  * update dependency mocha to v3.5.2 ([ee050764](https://github.com/lgaticaq/hubot-toggl-payment/commit/ee0507646640db4260c91cc726b27423ca1fd748))
+  * update dependency codeclimate-test-reporter to v0.5.0 ([4bc13d5f](https://github.com/lgaticaq/hubot-toggl-payment/commit/4bc13d5f155c887566b2e549b6cefb0673639dc6))
+
+##### Refactors
+
+* **src:** migrate coffee to js ([433f75de](https://github.com/lgaticaq/hubot-toggl-payment/commit/433f75de252390ca89c2a0c2b12d545c06d33828))
+* **deps:**
+  * renovate pin dependencies packages ([7585aee8](https://github.com/lgaticaq/hubot-toggl-payment/commit/7585aee89b7b0c1022b349d26cda21567fb637e3))
+  * renovate pin dependencies packages ([db170aaf](https://github.com/lgaticaq/hubot-toggl-payment/commit/db170aaffa3d7c9ca65d7eb7bebb7bfcd6cfc3f2))
+
 #### 1.1.10 (2016-11-13)
 
 ##### Chores
