@@ -32,26 +32,26 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-toggl-payment#readme",
   "dependencies": {
-    "bluebird": "^3.5.0",
+    "bluebird": "3.5.1",
     "indicadoresdeldia": "0.0.3",
-    "parse-ms": "^1.0.1",
-    "simple-encryptor": "^1.1.0",
-    "toggl-api": "^1.0.1"
+    "parse-ms": "1.0.1",
+    "simple-encryptor": "1.1.1",
+    "toggl-api": "1.0.1"
   },
   "devDependencies": {
     "chai": "4.1.2",
     "coffee-script": "1.12.7",
-    "eslint": "4.6.1",
+    "eslint": "4.9.0",
     "eslint-config-standard": "10.2.1",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-node": "5.1.1",
-    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.0",
+    "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-standard": "3.0.1",
     "generate-changelog": "1.5.0",
     "hubot-test-helper": "1.8.1",
     "istanbul": "0.4.5",
     "mocha": "4.0.1",
-    "prettier-standard": "6.0.0",
+    "prettier-standard": "7.0.3",
     "proxyquire": "1.8.0"
   },
   "eslintConfig": {
@@ -67,6 +67,8 @@
   },
   "renovate": {
     "automerge": "minor",
-    "extends": [":library"]
+    "extends": [
+      ":library"
+    ]
   }
 }
