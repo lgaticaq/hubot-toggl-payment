@@ -34,7 +34,7 @@
   "dependencies": {
     "bluebird": "3.5.2",
     "indicadoresdeldia": "0.0.3",
-    "parse-ms": "1.0.1",
+    "parse-ms": "2.0.0",
     "simple-encryptor": "1.4.0",
     "toggl-api": "1.0.1"
   },
