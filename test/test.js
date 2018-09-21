@@ -1,9 +1,8 @@
 'use strict'
 
-require('coffee-script/register')
 const Helper = require('hubot-test-helper')
 const { expect } = require('chai')
-const proxyquire = require('proxyquire')
+const mock = require('mock-require')
 const simpleEncryptor = require('simple-encryptor')
 
 const apiToken = 'DK89YJJRktQ2X0B3i1o7N96Z75pWL2MR'
@@ -66,15 +65,14 @@ class TogglStub {
     return new Promise(resolve => resolve())
   }
 }
-const indicadoresStub = () =>
-  new Promise(resolve => resolve({ indicator: { uf: 26029.52 } }))
+const indicadoresStub = () => {
+  return new Promise(resolve => resolve({ indicator: { uf: 26029.52 } }))
+}
 
-proxyquire('./../src/script.js', {
-  'toggl-api': TogglStub,
-  indicadoresdeldia: indicadoresStub
-})
+mock('toggl-api', TogglStub)
+mock('indicadoresdeldia', indicadoresStub)
 
-const helper = new Helper('./../src/index.js')
+const helper = new Helper('../src/index.js')
 
 describe('hubot-toggl-payment', function () {
   describe('valid', () => {
@@ -136,11 +134,13 @@ describe('hubot-toggl-payment', function () {
 Testing 1 00:01:40
 Testing 2 00:01:40
 Finish. Total time is: 00:03:20`
-        return expect(this.room.messages).to.eql([
+        expect(this.room.messages).to.eql([
           ['user', `hubot toggl payment 500000 0.3 ${password}`],
           ['hubot', 'Processing time entries...'],
-          ['hubot', `user close tasks successfull\n${message}`],
           ['hubot', message]
+        ])
+        expect(this.room.robot.messagesTo['#random']).to.eql([
+          ['hubot', `user close tasks successfull\n${message}`]
         ])
       })
     })
