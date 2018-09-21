@@ -7,7 +7,7 @@
     "lint": "eslint 'src/**/*.js' 'test/**/*.js' --fix",
     "format": "prettier-standard 'src/**/*.js' 'test/**/*.js'",
     "pretest": "npm run lint -s && npm run format -s",
-    "test": "mocha"
+    "test": "nyc --reporter=html --reporter=text mocha"
   },
   "engines": {
     "node": ">=6"
@@ -45,6 +45,7 @@
     "eslint-plugin-standard": "4.0.0",
     "hubot-test-helper": "1.9.0",
     "mocha": "5.2.0",
+    "nyc": "13.0.1",
     "prettier-standard": "8.0.1",
     "proxyquire": "2.1.0"
   },
