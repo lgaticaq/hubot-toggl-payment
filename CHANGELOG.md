@@ -1,3 +1,26 @@
+# [2.0.0](https://github.com/lgaticaq/hubot-toggl-payment/compare/v1.1.11...v2.0.0) (2018-09-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bluebird to v3.5.2 ([5d8389f](https://github.com/lgaticaq/hubot-toggl-payment/commit/5d8389f))
+* **deps:** update dependency coffee-script to v1.12.7 ([68a48df](https://github.com/lgaticaq/hubot-toggl-payment/commit/68a48df))
+* **deps:** update dependency parse-ms to v2 ([a2e38dd](https://github.com/lgaticaq/hubot-toggl-payment/commit/a2e38dd))
+* **deps:** update dependency simple-encryptor to v1.2.0 ([771921f](https://github.com/lgaticaq/hubot-toggl-payment/commit/771921f))
+* **deps:** update dependency simple-encryptor to v1.3.0 ([92ce95d](https://github.com/lgaticaq/hubot-toggl-payment/commit/92ce95d))
+* **deps:** update dependency simple-encryptor to v1.4.0 ([578f8c1](https://github.com/lgaticaq/hubot-toggl-payment/commit/578f8c1))
+* **deps:** update dependency simple-encryptor to v2 ([cafca2a](https://github.com/lgaticaq/hubot-toggl-payment/commit/cafca2a))
+
+
+### chore
+
+* **node:** update min node version to v8 ([cb7807c](https://github.com/lgaticaq/hubot-toggl-payment/commit/cb7807c))
+
+
+### BREAKING CHANGES
+
+* **node:** set min node version to v8
+
 #### 1.1.11 (2017-10-23)
 
 ##### Chores
