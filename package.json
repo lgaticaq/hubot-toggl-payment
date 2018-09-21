@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint 'src/**/*.js' 'test/**/*.js' --fix",
     "format": "prettier-standard 'src/**/*.js' 'test/**/*.js'",
+    "commit": "commit",
     "pretest": "npm run lint -s && npm run format -s",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
@@ -35,6 +36,9 @@
     "toggl-api": "1.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "7.1.2",
+    "@commitlint/config-conventional": "7.1.2",
+    "@commitlint/prompt-cli": "7.1.2",
     "chai": "4.1.2",
     "coffee-script": "1.12.7",
     "eslint": "5.6.0",
@@ -59,6 +63,11 @@
         "error"
       ]
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "renovate": {
     "automerge": "minor",
