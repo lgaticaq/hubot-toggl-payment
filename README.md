@@ -1,12 +1,12 @@
 # hubot-toggl-payment
 
-[![npm version](https://img.shields.io/npm/v/hubot-toggl-payment.svg?style=flat-square)](https://www.npmjs.com/package/hubot-toggl-payment)
-[![npm downloads](https://img.shields.io/npm/dm/hubot-toggl-payment.svg?style=flat-square)](https://www.npmjs.com/package/hubot-toggl-payment)
-[![Build Status](https://img.shields.io/travis/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://travis-ci.org/lgaticaq/hubot-toggl-payment)
-[![Coverage Status](https://img.shields.io/coveralls/lgaticaq/hubot-toggl-payment/master.svg?style=flat-square)](https://coveralls.io/github/lgaticaq/hubot-toggl-payment?branch=master)
-[![Code Climate](https://img.shields.io/codeclimate/github/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://codeclimate.com/github/lgaticaq/hubot-toggl-payment)
-[![dependency Status](https://img.shields.io/david/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://david-dm.org/lgaticaq/hubot-toggl-payment#info=dependencies)
-[![devDependency Status](https://img.shields.io/david/dev/lgaticaq/hubot-toggl-payment.svg?style=flat-square)](https://david-dm.org/lgaticaq/hubot-toggl-payment#info=devDependencies)
+[![npm version](https://img.shields.io/npm/v/hubot-toggl-payment.svg)](https://www.npmjs.com/package/hubot-toggl-payment)
+[![npm downloads](https://img.shields.io/npm/dm/hubot-toggl-payment.svg)](https://www.npmjs.com/package/hubot-toggl-payment)
+[![Build Status](https://img.shields.io/travis/lgaticaq/hubot-toggl-payment.svg)](https://travis-ci.org/lgaticaq/hubot-toggl-payment)
+[![Coverage Status](https://img.shields.io/coveralls/lgaticaq/hubot-toggl-payment/master.svg)](https://coveralls.io/github/lgaticaq/hubot-toggl-payment?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1edd0dbcb5e3fd48aeb2/maintainability)](https://codeclimate.com/github/lgaticaq/hubot-toggl-payment/maintainability)
+[![dependency Status](https://img.shields.io/david/lgaticaq/hubot-toggl-payment.svg)](https://david-dm.org/lgaticaq/hubot-toggl-payment#info=dependencies)
+[![devDependency Status](https://img.shields.io/david/dev/lgaticaq/hubot-toggl-payment.svg)](https://david-dm.org/lgaticaq/hubot-toggl-payment#info=devDependencies)
 
 > A Hubot script to close time entries for new payment
 
