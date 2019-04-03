@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/lgaticaq/hubot-toggl-payment/compare/v2.0.1...v2.0.2) (2019-04-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bluebird to v3.5.4 ([4d6c894](https://github.com/lgaticaq/hubot-toggl-payment/commit/4d6c894))
+
 ## [2.0.1](https://github.com/lgaticaq/hubot-toggl-payment/compare/v2.0.0...v2.0.1) (2018-11-07)
 
 
