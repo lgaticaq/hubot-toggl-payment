@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/lgaticaq/hubot-toggl-payment/compare/v2.0.2...v2.0.3) (2019-04-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency parse-ms to v2.1.0 ([e4683d0](https://github.com/lgaticaq/hubot-toggl-payment/commit/e4683d0))
+
 ## [2.0.2](https://github.com/lgaticaq/hubot-toggl-payment/compare/v2.0.1...v2.0.2) (2019-04-03)
 
 
