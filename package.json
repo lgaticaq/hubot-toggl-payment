@@ -1,6 +1,6 @@
 {
   "name": "hubot-toggl-payment",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "A Hubot script to close time entries for new payment",
   "main": "src",
   "scripts": {
