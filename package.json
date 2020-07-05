@@ -34,7 +34,7 @@
     "bluebird": "3.7.2",
     "indicadoresdeldia": "0.0.3",
     "parse-ms": "2.1.0",
-    "simple-encryptor": "2.0.0",
+    "simple-encryptor": "4.0.0",
     "toggl-api": "1.0.1"
   },
   "devDependencies": {
